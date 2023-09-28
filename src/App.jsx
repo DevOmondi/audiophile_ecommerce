@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import { useState, createContext } from "react";
+import HomePage from "./pages/home/components/HomePage";
+import CategoryPage from "./pages/category/components/CategoryPage";
+import ProductDetailPage from "./pages/productDetail/components/ProductDetailPage";
+import CartModal from "./pages/cart/components/CartModal";
+import CheckoutPage from "./pages/checkout/components/CheckoutPage";
+import CheckoutModal from "./pages/checkout/components/CheckoutModal";
+import MobileMenu from "./pages/MobileMenu";
+// App context
+export const appContext = createContext();
 function App() {
-  const [count, setCount] = useState(0)
-
+  // Modals state management
+  const [checkoutModalIsopen, setCheckoutModalIsopen] = useState(false);
+  const [cartModalIsopen, setCartModalIsopen] = useState(false);
+  // Context object
+  const contextObject = {
+    checkoutModalIsopen: checkoutModalIsopen,
+    cartModalIsopen: cartModalIsopen,
+    setCartModalIsopen: setCartModalIsopen,
+    setCheckoutModalIsopen: setCheckoutModalIsopen,
+  };
+  console.log("Context object is:", contextObject);
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <appContext.Provider value={contextObject}>
+      <div className="font-manrope">
+        <HomePage />
+        <CategoryPage/> 
+        <ProductDetailPage />
+        <CartModal />
+        <CheckoutPage />
+        <CheckoutModal />
+        <MobileMenu />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </appContext.Provider>
+  );
 }
 
-export default App
+export default App;
