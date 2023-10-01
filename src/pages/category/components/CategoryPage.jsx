@@ -13,7 +13,7 @@ import earPhoneCardImage from "../../../../resources/assets/shared/desktop/image
 
 const CategoryPage = () => {
   const { state } = useLocation();
-  console.log("state data is:", state);
+  // console.log("state data is:", state);
   return (
     <div className="font-manrope">
       <CategoryHeader header={state[0].category} />

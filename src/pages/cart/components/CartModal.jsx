@@ -2,16 +2,19 @@
 import { useState } from "react";
 import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
+import { Link } from "react-router-dom";
+// import {useModalStatus} from "../../../useModalStatus";
 import CartPurchaseDetails from "./CartPurchaseDetails";
-import CheckoutBtn from "./CheckoutBtn";
+// import CheckoutBtn from "./CheckoutBtn";
 import cartImg1 from "../../../../resources/assets/cart/image-xx99-mark-two-headphones.jpg";
 import cartImg2 from "../../../../resources/assets/cart/image-xx59-headphones.jpg";
 import cartImg3 from "../../../../resources/assets/cart/image-yx1-earphones.jpg";
 
 const CartModal = () => {
   const [open, setOpen] = useState(true);
+  // const [isOpen, handleIsopenChange] = useModalStatus();
 
-  const onOpenModal = () => setOpen(true);
+  // const onOpenModal = () => setOpen(true);
   const onCloseModal = () => setOpen(false);
   return (
     <div className="font-manrope">
@@ -48,7 +51,14 @@ const CartModal = () => {
           <p className="text-[0.7rem] text-[#979797]">TOTAL</p>
           <p className="font-bold">$ 5396</p>
         </div>
-        <CheckoutBtn/>
+        {/* <CheckoutBtn/> */}
+        <Link to={"/checkout"}>
+          <div className="mx-auto">
+            <button className="bg-[#D87D4A] text-[#FFFFFF] my-[1.5rem] text-[0.8rem] py-[0.7rem] px-[0.8rem] hover:bg-[#FBAF85] w-[100%]">
+              CHECKOUT
+            </button>
+          </div>
+        </Link>
       </Modal>
     </div>
   );

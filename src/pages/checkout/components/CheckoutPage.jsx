@@ -1,15 +1,20 @@
 // import React from 'react'
-import { useContext } from "react";
+import { useState } from "react";
 import Header from "../../home/components/Header";
 import SummaryProductDets from "./SummaryProductDets";
 import Footer from "../../home/components/Footer";
+import CheckoutModal from "./CheckoutModal";
 import checkoutImg1 from "../../../../resources/assets/cart/image-xx99-mark-two-headphones.jpg";
 import checkoutImg2 from "../../../../resources/assets/cart/image-xx59-headphones.jpg";
 import checkoutImg3 from "../../../../resources/assets/cart/image-yx1-earphones.jpg";
-import { appContext } from "../../../App";
+// import { appContext } from "../../../App";
 const CheckoutPage = () => {
-  const appContextObject = useContext(appContext);
-  console.log("modal object is:", appContextObject);
+  // HANDLE CHECKOUT MODAL DISPLAY
+  const [checkoutModalIsopen, setCheckoutModalIsopen] = useState(false);
+  // TODO: Func to handle checkout modal Isopen state change
+  function handleCheckoutModalIsopenChange() {
+    setCheckoutModalIsopen(!checkoutModalIsopen);
+  }
   return (
     <div className="bg-[#FAFAFA] h-[100vh] overflow-auto">
       <div className="bg-[#000000]">
@@ -178,13 +183,17 @@ const CheckoutPage = () => {
             <p className="font-bold text-[#D87D4A]">$ 5446</p>
           </div>
           <div className="mx-auto">
-            <button className="bg-[#D87D4A] text-[#FFFFFF] my-[1.5rem] text-[0.8rem] py-[0.7rem] px-[0.8rem] hover:bg-[#FBAF85] w-[100%]">
+            <button
+              className="bg-[#D87D4A] text-[#FFFFFF] my-[1.5rem] text-[0.8rem] py-[0.7rem] px-[0.8rem] hover:bg-[#FBAF85] w-[100%]"
+              onClick={handleCheckoutModalIsopenChange}
+            >
               CONTINUE & PAY
             </button>
           </div>
         </div>
       </div>
       <Footer />
+      {checkoutModalIsopen && <CheckoutModal />}
     </div>
   );
 };

@@ -21,7 +21,7 @@ const HeroSection = () => {
     filterProductData();
   }, []);
   return (
-    <div className="bg-hero-image-mobile md:bg-hero-image-tablet lg:bg-hero-image-desktop bg-center bg-contain h-[100vh]">
+    <div className="bg-hero-image-mobile md:bg-hero-image-tablet lg:bg-hero-image-desktop bg-center bg-contain h-[100vh] no-repeat">
       <Header />
       <div className="h-[0.5px] bg-[#979797] mt-[1rem] lg:w-[80%] lg:mx-auto"></div>
       {/* Hero message */}

@@ -1,7 +1,7 @@
 // import React from 'react'
 import { Link } from "react-router-dom";
 const CategoryProductCard = ({ categoryCardData }) => {
-  console.log("category card data is", categoryCardData);
+  // console.log("category card data is", categoryCardData);
   const categoryCardImage = categoryCardData?.categoryImage?.mobile;
   return (
     <div className="w-[90%] mx-auto mt-[3rem] mb-[5rem] lg:flex lg:items-center lg:w-[80%] lg:gap-[12rem]">
