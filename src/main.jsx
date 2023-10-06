@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+// import HomePage from "./pages/home/components/HomePage.jsx";
 import App from "./App.jsx";
 import CategoryPage from "./pages/category/components/CategoryPage.jsx";
 import ProductDetailPage from "./pages/productDetail/components/ProductDetailPage.jsx";
@@ -14,7 +15,7 @@ import "./index.css";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <App/>,
   },
   {
     path: "/categories",

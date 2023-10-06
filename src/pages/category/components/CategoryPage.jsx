@@ -10,13 +10,15 @@ import Footer from "../../home/components/Footer";
 import headPhoneCardImage from "../../../../resources/assets/shared/desktop/image-category-thumbnail-headphones.png";
 import speakerCardImage from "../../../../resources/assets/shared/desktop/image-category-thumbnail-speakers.png";
 import earPhoneCardImage from "../../../../resources/assets/shared/desktop/image-category-thumbnail-earphones.png";
+// import { headerModalsContext } from "../../../App";
 
 const CategoryPage = () => {
+
   const { state } = useLocation();
   // console.log("state data is:", state);
   return (
     <div className="font-manrope">
-      <CategoryHeader header={state[0].category} />
+      <CategoryHeader header={state[0]?.category} />
       <div>
         {state?.map((stateObject, index) => (
           <CategoryProductCard key={index} categoryCardData={stateObject} />

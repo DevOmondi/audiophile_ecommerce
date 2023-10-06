@@ -15,12 +15,18 @@ const HomePage = () => {
     <div className="font-manrope">
       <HeroSection />
       <div className="my-[3rem] flex flex-col md:flex-row md:w-[90%] md:mx-auto md:gap-3 lg:w-[80%]">
-        <HeadphonesProductCard cardImage={headPhoneCardImage} product="HEADPHONES" />
+        <HeadphonesProductCard
+          cardImage={headPhoneCardImage}
+          product="HEADPHONES"
+        />
         <SpeakersProductCard cardImage={speakerCardImage} product="SPEAKERS" />
-        <EarphonesProductCard cardImage={earPhoneCardImage} product="EARPHONES" />
+        <EarphonesProductCard
+          cardImage={earPhoneCardImage}
+          product="EARPHONES"
+        />
       </div>
       <SeeProductSection />
-      <BestGearSection/>
+      <BestGearSection />
       <Footer />
     </div>
   );
