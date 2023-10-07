@@ -1,8 +1,28 @@
 // import React from 'react'
+import { useState } from "react";
+import AddedToCartModal from "./AddedToCartModal";
 import QuantityBtn from "./QuantityBtn";
 import AddToCartBtn from "./AddToCartBtn";
 
 const ProductDetailSection = ({ productDetailsData }) => {
+  const [addedToCartModalIsopen, setAddedToCartModalIsopen] = useState(false);
+  const [quantity, setQuantity] = useState(1);
+  const [cartArray, setCartArray] = useState([]);
+  // TODO: Func to handle addition of product to cart
+  const addToCartHandler = () => {
+    productDetailsData["orderQuantity"] = quantity;
+    // console.log("Product details object is:", productDetailsData);
+    setCartArray([...cartArray, productDetailsData]);
+
+    setQuantity(1);
+    setAddedToCartModalIsopen(true);
+  };
+  // Convert array to string for storage in local storage
+  const cartArrayString = JSON.stringify(cartArray);
+  // console.log("cart array string is:", cartArrayString);
+  // Store array string in local storage
+  localStorage.setItem("cartArrayKey", cartArrayString);
+  // console.log("cart contains:", cartArray);
   return (
     <div className="w-[90%] lg:w-[80%] mx-auto">
       {/* Card sub section */}
@@ -27,8 +47,8 @@ const ProductDetailSection = ({ productDetailsData }) => {
             </p>
             <p className="font-bold pb-[1rem]">${productDetailsData?.price}</p>
             <div className="flex gap-[1rem] items-center">
-              <QuantityBtn />
-              <AddToCartBtn />
+              <QuantityBtn quantity={quantity} setQuantity={setQuantity} />
+              <AddToCartBtn addToCartHandler={addToCartHandler} />
             </div>
           </div>
         </div>
@@ -58,6 +78,12 @@ const ProductDetailSection = ({ productDetailsData }) => {
           </div>
         </div>
       </div>
+      {addedToCartModalIsopen && (
+        <AddedToCartModal
+          addedToCartModalIsopen={addedToCartModalIsopen}
+          setAddedToCartModalIsopen={setAddedToCartModalIsopen}
+        />
+      )}
     </div>
   );
 };

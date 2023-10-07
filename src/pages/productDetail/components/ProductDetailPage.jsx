@@ -24,7 +24,7 @@ const ProductDetailPage = () => {
       <div className="bg-[#000000]">
         <Header />
       </div>
-      <Link to={"/categories"}>
+      <Link to={"/"}>
         <p className="w-[90%] lg:w-[80%] mx-auto text-[#979797] text-[0.8rem] py-[1rem] hover:text-[#D87D4A] hover:cursor-pointer">
           Go Back
         </p>

@@ -7,7 +7,7 @@ import { Modal } from "react-responsive-modal";
 import orderConfirmIcon from "../../../../resources/assets/checkout/icon-order-confirmation.svg";
 import productImg from "../../../../resources/assets/cart/image-xx99-mark-two-headphones.jpg";
 
-const CheckoutModal = () => {
+const CheckoutModal = ({ grandAmount, cartArrayData }) => {
   const [open, setOpen] = useState(true);
 
   const onOpenModal = () => setOpen(true);
@@ -31,28 +31,28 @@ const CheckoutModal = () => {
             <div className="bg-[#F1F1F1] p-[1rem] rounded-t-lg md:rounded-tr-none md:rounded-l-lg">
               <div className="flex justify-between items-center mb-[1rem]">
                 <div className="flex gap-[1rem]">
-                  <img
+                  {/* <img
                     src={productImg}
                     alt="product image"
                     className="w-[3rem] h-[3rem] rounded-lg"
-                  />
+                  /> */}
                   <div>
-                    <h1 className="font-bold">XX99 MK II</h1>
-                    <p className="text-[#979797] text-[0.8rem]">$ 2,999</p>
+                    <h1 className="font-bold">{cartArrayData[0]?.name}</h1>
+                    <p className="text-[#979797] text-[0.8rem]">{`$ ${cartArrayData[0]?.price}`}</p>
                   </div>
                 </div>
-                <p className="text-[0.6rem] text-[#979797]">x1</p>
+                <p className="text-[0.6rem] text-[#979797]">{`x ${cartArrayData[0]?.orderQuantity}`}</p>
               </div>
               <div className="h-[1px] bg-[#979797]"></div>
               <p className="text-center text-[0.6rem] pt-[0.5rem] text-[#979797]">
-                and 2 other item(s)
+                {`and ${cartArrayData.length - 1} other item(s)`}
               </p>
             </div>
             {/* Grand total section */}
             <div className="bg-[#000000] p-[1rem] rounded-b-lg md:rounded-r-lg md:rounded-bl-none md:py-[2.3rem] md:pr-[2rem]">
               <p className="text-[#979797] text-[0.7rem]">GRAND TOTAL</p>
               <p className="text-[#FFFFFF] text-[0.8rem] pt-[0.5rem]">
-                $ 5,446
+                {`$ ${grandAmount}`}
               </p>
             </div>
           </div>

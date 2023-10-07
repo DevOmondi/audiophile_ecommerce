@@ -1,5 +1,6 @@
 // import React from 'react'
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import Header from "../../home/components/Header";
 import SummaryProductDets from "./SummaryProductDets";
 import Footer from "../../home/components/Footer";
@@ -9,6 +10,20 @@ import checkoutImg2 from "../../../../resources/assets/cart/image-xx59-headphone
 import checkoutImg3 from "../../../../resources/assets/cart/image-yx1-earphones.jpg";
 // import { appContext } from "../../../App";
 const CheckoutPage = () => {
+  const { state } = useLocation();
+  // console.log("cart array is:", state);
+  // SECTION: CALCULATE THE AMOUNTS
+  // Calculate total amount
+  const initAmount = 0;
+  const totalAmount = state?.reduce((accumulatorAmount, cartItem) => {
+    return accumulatorAmount + cartItem.price * cartItem.orderQuantity;
+  }, initAmount);
+  // console.log("total amount is:", totalAmount)
+  // calculate grand amount
+  const shippingAmount = 50;
+  const VATAmount = Math.floor((20 / 100) * totalAmount);
+  const grandAmount = totalAmount + shippingAmount + VATAmount;
+  console.log("grand amount is:", grandAmount);
   // HANDLE CHECKOUT MODAL DISPLAY
   const [checkoutModalIsopen, setCheckoutModalIsopen] = useState(false);
   // TODO: Func to handle checkout modal Isopen state change
@@ -147,40 +162,28 @@ const CheckoutPage = () => {
           <h1 className="font-bold text-lg py-[1rem]">SUMMARY</h1>
           {/* selected products checkout dets */}
           <div>
-            <SummaryProductDets
-              productImg={checkoutImg1}
-              product="XX99 MK II"
-              productPrice={2999}
-              quantity={1}
-            />
-            <SummaryProductDets
-              productImg={checkoutImg2}
-              product="XX59"
-              productPrice={899}
-              quantity={2}
-            />{" "}
-            <SummaryProductDets
-              productImg={checkoutImg3}
-              product="YX1"
-              productPrice={599}
-              quantity={1}
-            />
+            {state?.map((cartArrayItem, index) => (
+              <SummaryProductDets
+                key={index}
+                summaryProdDetsData={cartArrayItem}
+              />
+            ))}
           </div>
           <div className="flex justify-between items-center">
             <p className="text-[0.7rem] text-[#979797]">TOTAL</p>
-            <p className="font-bold">$ 5396</p>
+            <p className="font-bold">{`$ ${totalAmount}`}</p>
           </div>
           <div className="flex justify-between items-center">
             <p className="text-[0.7rem] text-[#979797]">SHIPPING</p>
-            <p className="font-bold">$ 50</p>
+            <p className="font-bold">{`$ ${shippingAmount}`}</p>
           </div>
           <div className="flex justify-between items-center">
             <p className="text-[0.7rem] text-[#979797]">VAT(INCLUDED)</p>
-            <p className="font-bold">$ 1079</p>
+            <p className="font-bold">{`$ ${VATAmount}`}</p>
           </div>
           <div className="flex justify-between items-center">
             <p className="text-[0.7rem] text-[#979797]">GRAND TOTAL</p>
-            <p className="font-bold text-[#D87D4A]">$ 5446</p>
+            <p className="font-bold text-[#D87D4A]">{`$ ${grandAmount}`}</p>
           </div>
           <div className="mx-auto">
             <button
@@ -193,7 +196,9 @@ const CheckoutPage = () => {
         </div>
       </div>
       <Footer />
-      {checkoutModalIsopen && <CheckoutModal />}
+      {checkoutModalIsopen && (
+        <CheckoutModal grandAmount={grandAmount} cartArrayData={state} />
+      )}
     </div>
   );
 };
