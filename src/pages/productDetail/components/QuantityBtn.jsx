@@ -8,8 +8,8 @@ const QuantityBtn = ({ quantity, setQuantity }) => {
         <span
           className="hover:text-[#D87D4A]"
           onClick={() => {
-            if(quantity >= 2){
-              setQuantity(quantity - 1)
+            if (quantity >= 2) {
+              setQuantity(quantity - 1);
             }
           }}
         >
@@ -19,8 +19,8 @@ const QuantityBtn = ({ quantity, setQuantity }) => {
         <span
           className="hover:text-[#D87D4A]"
           onClick={() => {
-            if(quantity >= 1){
-              setQuantity(quantity + 1)
+            if (quantity >= 1) {
+              setQuantity(quantity + 1);
             }
           }}
         >

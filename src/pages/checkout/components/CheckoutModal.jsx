@@ -3,9 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
-// import BackToHomeBtn from "./BackToHomeBtn";
-import orderConfirmIcon from "../../../../resources/assets/checkout/icon-order-confirmation.svg";
-import productImg from "../../../../resources/assets/cart/image-xx99-mark-two-headphones.jpg";
+import orderConfirmIcon from "../../../../public/assets/checkout/icon-order-confirmation.svg";
 
 const CheckoutModal = ({ grandAmount, cartArrayData }) => {
   const [open, setOpen] = useState(true);
@@ -31,11 +29,11 @@ const CheckoutModal = ({ grandAmount, cartArrayData }) => {
             <div className="bg-[#F1F1F1] p-[1rem] rounded-t-lg md:rounded-tr-none md:rounded-l-lg">
               <div className="flex justify-between items-center mb-[1rem]">
                 <div className="flex gap-[1rem]">
-                  {/* <img
-                    src={productImg}
+                  <img
+                    src={cartArrayData[0]?.image.mobile}
                     alt="product image"
                     className="w-[3rem] h-[3rem] rounded-lg"
-                  /> */}
+                  />
                   <div>
                     <h1 className="font-bold">{cartArrayData[0]?.name}</h1>
                     <p className="text-[#979797] text-[0.8rem]">{`$ ${cartArrayData[0]?.price}`}</p>

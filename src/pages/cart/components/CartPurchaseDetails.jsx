@@ -4,11 +4,11 @@ const CartPurchaseDetails = ({ cartPurchaseDetailsData }) => {
   return (
     <div className="flex justify-between items-center mb-[1rem]">
       <div className="flex gap-[1rem]">
-        {/* <img
-          src={productImg}
+        <img
+          src={cartPurchaseDetailsData?.image.mobile}
           alt={`${cartPurchaseDetailsData?.name} image`}
           className="w-[3rem] h-[3rem] rounded-lg"
-        /> */}
+        />
         <div>
           <h1 className="font-bold">{cartPurchaseDetailsData?.name}</h1>
           <p className="text-[#979797] text-[0.8rem]">{`$ ${cartPurchaseDetailsData?.price}`}</p>

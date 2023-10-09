@@ -2,8 +2,8 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import productData from "../../../../resources/data.json";
-import speakerProductImage from "../../../../resources/assets/home/desktop/image-speaker-zx9.png";
-import earphonesProductImage from "../../../../resources/assets/product-yx1-earphones/desktop/image-gallery-2.jpg";
+import speakerProductImage from "../../../../public/assets/home/desktop/image-speaker-zx9.png";
+import earphonesProductImage from "../../../../public/assets/product-yx1-earphones/desktop/image-gallery-2.jpg";
 
 const SeeProductSection = () => {
   // ZX9 DATA

@@ -1,7 +1,7 @@
 // import React from 'react
-import headPhoneCardImage from "../../../../resources/assets/shared/desktop/image-category-thumbnail-headphones.png";
-import speakerCardImage from "../../../../resources/assets/shared/desktop/image-category-thumbnail-speakers.png";
-import earPhoneCardImage from "../../../../resources/assets/shared/desktop/image-category-thumbnail-earphones.png";
+import headPhoneCardImage from "../../../../public/assets/shared/desktop/image-category-thumbnail-headphones.png";
+import speakerCardImage from "../../../../public/assets/shared/desktop/image-category-thumbnail-speakers.png";
+import earPhoneCardImage from "../../../../public/assets/shared/desktop/image-category-thumbnail-earphones.png";
 import HeroSection from "./HeroSection";
 import HeadphonesProductCard from "./HeadphonesProductCard";
 import SpeakersProductCard from "./SpeakersProductCard";

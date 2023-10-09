@@ -5,10 +5,7 @@ import Header from "../../home/components/Header";
 import SummaryProductDets from "./SummaryProductDets";
 import Footer from "../../home/components/Footer";
 import CheckoutModal from "./CheckoutModal";
-import checkoutImg1 from "../../../../resources/assets/cart/image-xx99-mark-two-headphones.jpg";
-import checkoutImg2 from "../../../../resources/assets/cart/image-xx59-headphones.jpg";
-import checkoutImg3 from "../../../../resources/assets/cart/image-yx1-earphones.jpg";
-// import { appContext } from "../../../App";
+
 const CheckoutPage = () => {
   const { state } = useLocation();
   // console.log("cart array is:", state);
@@ -23,7 +20,7 @@ const CheckoutPage = () => {
   const shippingAmount = 50;
   const VATAmount = Math.floor((20 / 100) * totalAmount);
   const grandAmount = totalAmount + shippingAmount + VATAmount;
-  console.log("grand amount is:", grandAmount);
+  // console.log("grand amount is:", grandAmount);
   // HANDLE CHECKOUT MODAL DISPLAY
   const [checkoutModalIsopen, setCheckoutModalIsopen] = useState(false);
   // TODO: Func to handle checkout modal Isopen state change

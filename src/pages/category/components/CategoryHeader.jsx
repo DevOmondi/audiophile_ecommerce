@@ -1,7 +1,6 @@
 // import React from 'react
 import Header from "../../home/components/Header";
-// import itemsData from "../../../../resources/data.json";
-const CategoryHeader = ({header}) => {
+const CategoryHeader = ({ header }) => {
   // console.log("item data:", itemsData)
   return (
     <div className="bg-[#000000] text-white">

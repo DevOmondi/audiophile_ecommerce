@@ -2,7 +2,7 @@
 import categoryData from "../../../../resources/data.json";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import arrowRight from "../../../../resources/assets/shared/desktop/icon-arrow-right.svg";
+import arrowRight from "../../../../public/assets/shared/desktop/icon-arrow-right.svg";
 const HeadphonesProductCard = ({ cardImage, product }) => {
   const [headphonesDataArray, setHeadphonesDataArray] = useState([]);
   // TODO: Func to filter data from json file
@@ -15,9 +15,9 @@ const HeadphonesProductCard = ({ cardImage, product }) => {
   // console.log(headphonesDataArray);
 
   // TODO: Execute at page load
-  useEffect(()=>{
+  useEffect(() => {
     filterCategoryData();
-  },[])
+  }, []);
 
   return (
     <div className="text-center mx-auto bg-[#F1F1F1] rounded-lg w-[90%] mt-[4rem] pb-[1rem] ">

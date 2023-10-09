@@ -13,7 +13,6 @@ const ProductDetailSection = ({ productDetailsData }) => {
     productDetailsData["orderQuantity"] = quantity;
     // console.log("Product details object is:", productDetailsData);
     setCartArray([...cartArray, productDetailsData]);
-
     setQuantity(1);
     setAddedToCartModalIsopen(true);
   };
@@ -28,7 +27,7 @@ const ProductDetailSection = ({ productDetailsData }) => {
       {/* Card sub section */}
       <div className="flex flex-col md:flex-row md:items-center md:gap-[6rem] lg:gap-[10rem]">
         <img
-          src={productDetailsData?.image?.mobile}
+          src={productDetailsData?.image.mobile}
           alt={`${productDetailsData?.name} image`}
           className="rounded-lg md:w-[35%] md:h-[25rem]"
         />

@@ -2,7 +2,10 @@
 import { useState } from "react";
 import { Modal } from "react-responsive-modal";
 
-const AddedToCartModal = ({addedToCartModalIsopen, setAddedToCartModalIsopen}) => {
+const AddedToCartModal = ({
+  addedToCartModalIsopen,
+  setAddedToCartModalIsopen,
+}) => {
   const [open, setOpen] = useState(addedToCartModalIsopen);
 
   // const onOpenModal = () => setOpen(true);
@@ -10,7 +13,9 @@ const AddedToCartModal = ({addedToCartModalIsopen, setAddedToCartModalIsopen}) =
   return (
     <div className="font-manrope">
       <Modal open={open} onClose={onCloseModal} center>
-        <p className="mt-[2rem] text-[#979797]">Added to cart successfully :)</p>
+        <p className="mt-[2rem] text-[#979797]">
+          Added to cart successfully :)
+        </p>
       </Modal>
     </div>
   );

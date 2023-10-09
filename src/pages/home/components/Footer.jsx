@@ -2,9 +2,9 @@
 import categoryData from "../../../../resources/data.json";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import fbIcon from "../../../../resources/assets/shared/desktop/icon-facebook.svg";
-import twitterIcon from "../../../../resources/assets/shared/desktop/icon-twitter.svg";
-import igIcon from "../../../../resources/assets/shared/desktop/icon-instagram.svg";
+import fbIcon from "../../../../public/assets/shared/desktop/icon-facebook.svg";
+import twitterIcon from "../../../../public/assets/shared/desktop/icon-twitter.svg";
+import igIcon from "../../../../public/assets/shared/desktop/icon-instagram.svg";
 
 const Footer = () => {
   //GET DATA FOR LINK TO HEADPHONES SECTION

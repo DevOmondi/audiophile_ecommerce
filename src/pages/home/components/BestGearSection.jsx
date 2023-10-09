@@ -1,9 +1,8 @@
 // import React from 'react'
-import bestGearImg from "../../../../resources/assets/shared/desktop/image-best-gear.jpg";
+import bestGearImg from "../../../../public/assets/shared/desktop/image-best-gear.jpg";
 
 const BestGearSection = () => {
   return (
-    // <div>BestGearSection</div>
     <div className="mt-[6rem] text-center lg:w-[80%] lg:mx-auto lg:flex lg:items-center">
       <img
         src={bestGearImg}

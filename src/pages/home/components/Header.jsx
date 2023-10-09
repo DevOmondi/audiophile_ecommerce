@@ -4,8 +4,8 @@ import MobileMenu from "../../MobileMenu";
 import CartModal from "../../cart/components/CartModal";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import menuIcon from "../../../../resources/assets/shared/tablet/icon-hamburger.svg";
-import cartIcon from "../../../../resources/assets/shared/desktop/icon-cart.svg";
+import menuIcon from "../../../../public/assets/shared/tablet/icon-hamburger.svg";
+import cartIcon from "../../../../public/assets/shared/desktop/icon-cart.svg";
 
 const Header = () => {
   const [cartModalIsopen, setCartModalIsopen] = useState(false);
@@ -23,7 +23,7 @@ const Header = () => {
   const [headphonesDataArray, setHeadphonesDataArray] = useState([]);
   // TODO: Func to filter data from json file
   function filterHeadphonesCategoryData() {
-    const filteredArray = categoryData.filter(
+    const filteredArray = categoryData?.filter(
       (categoryDataObject) => categoryDataObject.category === "headphones"
     );
     setHeadphonesDataArray(filteredArray);
@@ -34,7 +34,7 @@ const Header = () => {
   const [speakersDataArray, setSpeakersDataArray] = useState([]);
   // TODO: Func to filter data from json file
   function filterSpeakersCategoryData() {
-    const filteredArray = categoryData.filter(
+    const filteredArray = categoryData?.filter(
       (categoryDataObject) => categoryDataObject.category === "speakers"
     );
     setSpeakersDataArray(filteredArray);
@@ -45,7 +45,7 @@ const Header = () => {
   const [earphonesDataArray, setEarphonesDataArray] = useState([]);
   // TODO: Func to filter data from json file
   function filterEarphonesCategoryData() {
-    const filteredArray = categoryData.filter(
+    const filteredArray = categoryData?.filter(
       (categoryDataObject) => categoryDataObject.category === "earphones"
     );
     setEarphonesDataArray(filteredArray);

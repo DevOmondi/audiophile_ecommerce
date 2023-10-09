@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import categoryData from "../../../../resources/data.json";
-import arrowRight from "../../../../resources/assets/shared/desktop/icon-arrow-right.svg";
+import arrowRight from "../../../../public/assets/shared/desktop/icon-arrow-right.svg";
 const EarphonesProductCard = ({ cardImage, product }) => {
   const [earphonesDataArray, setEarphonesDataArray] = useState([]);
   // TODO: Func to filter data from json file

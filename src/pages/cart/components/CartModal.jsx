@@ -3,19 +3,13 @@ import { useState } from "react";
 import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
 import { Link } from "react-router-dom";
-// import {useModalStatus} from "../../../useModalStatus";
 import CartPurchaseDetails from "./CartPurchaseDetails";
-// import CheckoutBtn from "./CheckoutBtn";
-// import cartImg1 from "../../../../resources/assets/cart/image-xx99-mark-two-headphones.jpg";
-// import cartImg2 from "../../../../resources/assets/cart/image-xx59-headphones.jpg";
-// import cartImg3 from "../../../../resources/assets/cart/image-yx1-earphones.jpg";
-
 const CartModal = () => {
   // Retrieve cart array from local storage
   const retrievedCartArrayString = localStorage.getItem("cartArrayKey");
   // console.log(retrievedCartArrayString);
   const retrievedCartArray = JSON.parse(retrievedCartArrayString);
-  console.log(retrievedCartArray);
+  // console.log(retrievedCartArray);
   // TODO: Func to remove items from cart
   // function removeAllItems() {
   //   localStorage.removeItem("cartArrayKey");

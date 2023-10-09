@@ -1,7 +1,7 @@
 // import React from 'react'
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import arrowRight from "../../../../resources/assets/shared/desktop/icon-arrow-right.svg";
+import arrowRight from "../../../../public/assets/shared/desktop/icon-arrow-right.svg";
 import categoryData from "../../../../resources/data.json";
 const SpeakersProductCard = ({ cardImage, product }) => {
   const [speakersDataArray, setSpeakersDataArray] = useState([]);
